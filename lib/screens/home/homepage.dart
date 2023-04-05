@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:saathi/controllers/botController.dart';
 import 'package:saathi/screens/home/AddPost.dart';
 import 'package:saathi/screens/home/HopeChamber.dart';
 import 'package:saathi/screens/home/chatpage.dart';
@@ -32,13 +33,7 @@ class _HomePageState extends State<HomePage> {
       home: Scaffold(
         body: pages[pageIndex],
         bottomNavigationBar: buildMyNavBar(context),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-             Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatPage()));
-          },
-          backgroundColor: Color(0xff437BAF),
-          child: const Icon(Icons.chat),
-        ),
+
       ),
       debugShowCheckedModeBanner: false,
     );

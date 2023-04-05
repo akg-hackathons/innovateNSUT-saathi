@@ -2,14 +2,14 @@ import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:flutter/material.dart';
 import 'package:saathi/utils/messages.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class ChatPage extends StatefulWidget {
+  const ChatPage({Key? key}) : super(key: key);
 
   @override
-  _HomeState createState() => _HomeState();
+  _ChatPageState createState() => _ChatPageState();
 }
 
-class _HomeState extends State<Home> {
+class _ChatPageState extends State<ChatPage> {
   late DialogFlowtter dialogFlowtter;
   final TextEditingController _controller = TextEditingController();
 
@@ -30,9 +30,10 @@ class _HomeState extends State<Home> {
         title: Text(
           'Your Dost',
           style:
-              TextStyle(color: Color(0xFFFFD495), fontWeight: FontWeight.bold),
+              TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Color(0xFFFAAB78),
+        centerTitle: true,
+        backgroundColor: Color(0xff437BAF),
 
       ),
       body: Container(
@@ -42,18 +43,20 @@ class _HomeState extends State<Home> {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
               //color: Color(0xFFFAAB78),
-              color: Color(0xFFFAAB78),
+              // color: Color(0xFFFAAB78),
+              color: Color(0xff437BAF),
               child: Row(
                 children: [
                   Expanded(
                       child: TextField(
                     controller: _controller,
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
-                      labelText: "Type your message here",
+                    //  labelText: "Type your message here",
+                      hintText:"Type your message here" ,
                       labelStyle: TextStyle(color: Colors.black87),
                       filled: true,
-                      fillColor: Color(0xFFFFD495),
+                      fillColor: Colors.white,
                       // labelStyle:
                       //     TextStyle(fontFamily: GoogleFonts.poppins().fontFamily),
                     ),
@@ -65,7 +68,7 @@ class _HomeState extends State<Home> {
                       },
                       icon: Icon(
                         Icons.send,
-                        color: Color(0xFFFFD495),
+                        color: Colors.white,
                       ))
                 ],
               ),

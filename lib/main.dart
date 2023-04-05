@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:saathi/firebase_options.dart';
+import 'package:saathi/models/onboarding_page.dart';
 import 'package:saathi/screens/home/app-bar.dart';
 import 'package:saathi/screens/home/meditation.dart';
 import 'package:saathi/screens/home/positivity-wall.dart';
@@ -26,7 +27,7 @@ class App extends StatelessWidget {
         primarySwatch: Colors.red,
       ),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: OnBoardingPage(),
     );
   }
 }

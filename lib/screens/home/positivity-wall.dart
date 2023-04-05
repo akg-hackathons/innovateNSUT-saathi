@@ -488,7 +488,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:saathi/controllers/botController.dart';
 import 'package:saathi/screens/home/app-bar.dart';
+import 'package:saathi/screens/home/search.dart';
 import 'package:saathi/screens/home/userprofile.dart';
 import 'package:saathi/utils.dart';
 
@@ -516,12 +518,22 @@ class PositivityWall extends StatelessWidget {
           actions: [
             IconButton(
                 iconSize: 28,
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Search()));
+                },
                 icon: Icon(Icons.search)
             ),
           ],
         ),
+
         drawer: UserProfile(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatPage()));
+          },
+          backgroundColor: Color(0xff437BAF),
+          child: const Icon(Icons.chat),
+        ),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
