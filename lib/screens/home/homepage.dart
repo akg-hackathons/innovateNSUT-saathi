@@ -1,14 +1,10 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:saathi/controllers/botController.dart';
 import 'package:saathi/screens/home/AddPost.dart';
-import 'package:saathi/screens/home/HopeChamber.dart';
-import 'package:saathi/screens/home/chatpage.dart';
+import 'package:saathi/screens/home/hope_screen.dart';
 import 'package:saathi/screens/home/meditation.dart';
 import 'package:saathi/screens/home/positivity-wall.dart';
 import 'package:saathi/screens/home/userprofile.dart';
-import 'package:saathi/screens/home/search.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -22,20 +18,18 @@ class _HomePageState extends State<HomePage> {
 
   final pages = [
      PositivityWall(),
-     HopeChamber(),
+     Quotes(),
      AddPost(),
      Meditation(),
      UserProfile(),
   ];
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: pages[pageIndex],
-        bottomNavigationBar: buildMyNavBar(context),
-
+    return SafeArea(
+      child: Scaffold(
+          body: pages[pageIndex],
+          bottomNavigationBar: buildMyNavBar(context),
       ),
-      debugShowCheckedModeBanner: false,
     );
   }
   buildMyNavBar(BuildContext context){

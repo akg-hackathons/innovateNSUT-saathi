@@ -13,7 +13,7 @@ class Quotes extends StatefulWidget {
 String quote = "";
 
 class _QuotesState extends State<Quotes> {
-  GoogleTranslator translator = new GoogleTranslator();
+  GoogleTranslator translator = GoogleTranslator();
   String out = "";
   final lang = TextEditingController();
   String quote = "";
