@@ -49,6 +49,7 @@ dependencies:
   flutter_svg: ^2.0.4
   smooth_page_indicator: ^1.0.1
   translator: ^0.1.7
+  pinput: ^2.2.31
 
 dev_dependencies:
   flutter_test:
