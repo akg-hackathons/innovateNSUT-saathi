@@ -489,6 +489,7 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:saathi/screens/home/app-bar.dart';
+import 'package:saathi/screens/home/userprofile.dart';
 import 'package:saathi/utils.dart';
 
 class PositivityWall extends StatelessWidget {
@@ -503,15 +504,15 @@ class PositivityWall extends StatelessWidget {
           backgroundColor: Color(0xff437BAF),
           title: Text("Positivity Wall"),
           centerTitle: true,
-          leading: IconButton(
-            icon: Image.asset(
-              "assets/images/profileicon.png",
-              height: 26,
-            ),
-            onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> Profile()));
-            },
-          ),
+          // leading: IconButton(
+          //   icon: Image.asset(
+          //     "assets/images/profileicon.png",
+          //     height: 26,
+          //   ),
+          //   onPressed: (){
+          //     Navigator.push(context, MaterialPageRoute(builder: (context)=> UserProfile()));
+          //   },
+          // ),
           actions: [
             IconButton(
                 iconSize: 28,
@@ -520,6 +521,7 @@ class PositivityWall extends StatelessWidget {
             ),
           ],
         ),
+        drawer: UserProfile(),
         body: Column(
           children: [
             Container(

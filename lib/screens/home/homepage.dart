@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:saathi/screens/home/AddPost.dart';
 import 'package:saathi/screens/home/HopeChamber.dart';
 import 'package:saathi/screens/home/meditation.dart';
@@ -88,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                     ?const Icon(
                   Icons.add_circle,
                   color: Colors.white,
-                  size: 30,
+                  size: 40,
                 )
                     : const Icon(
                   Icons.add_circle_outline,
@@ -105,11 +107,17 @@ class _HomePageState extends State<HomePage> {
                 icon: pageIndex ==3
                     ? IconButton(
                     onPressed: (){},
-                     icon: Image.asset("assets/images/Vector.png" ,),
+                     icon: Image.asset(
+                       "assets/images/yoga.svg" ,
+
+                     ),
                 )
                     : IconButton(
                   onPressed: (){},
-                  icon: Image.asset("assets/images/Vector.png" ,),
+                    icon:  SvgPicture.asset(
+                        "assets/images/yoga.svg",
+                      color: Colors.white,
+                    ),
                 )
               ),
               IconButton(
