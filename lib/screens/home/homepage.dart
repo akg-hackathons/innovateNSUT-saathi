@@ -31,6 +31,13 @@ class _HomePageState extends State<HomePage> {
       home: Scaffold(
         body: pages[pageIndex],
         bottomNavigationBar: buildMyNavBar(context),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+
+          },
+          backgroundColor: Color(0xff437BAF),
+          child: const Icon(Icons.chat),
+        ),
       ),
       debugShowCheckedModeBanner: false,
     );
@@ -117,6 +124,7 @@ class _HomePageState extends State<HomePage> {
                     icon:  SvgPicture.asset(
                         "assets/images/yoga.svg",
                       color: Colors.white,
+                      height: 100,
                     ),
                 )
               ),
