@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:saathi/screens/home/AddPost.dart';
 import 'package:saathi/screens/home/HopeChamber.dart';
+import 'package:saathi/screens/home/chatpage.dart';
 import 'package:saathi/screens/home/meditation.dart';
 import 'package:saathi/screens/home/positivity-wall.dart';
 import 'package:saathi/screens/home/userprofile.dart';
@@ -33,7 +34,7 @@ class _HomePageState extends State<HomePage> {
         bottomNavigationBar: buildMyNavBar(context),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-
+             Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatPage()));
           },
           backgroundColor: Color(0xff437BAF),
           child: const Icon(Icons.chat),
