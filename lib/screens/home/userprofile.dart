@@ -9,7 +9,7 @@ class UserProfile extends StatelessWidget {
       backgroundColor: Colors.white,
       child: ListView(
         padding: const EdgeInsets.all(0),
-        children: const [
+        children:  [
           DrawerHeader (
             padding: EdgeInsets.all(0.0),
             child: UserAccountsDrawerHeader(
@@ -65,21 +65,6 @@ class UserProfile extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.pin_end),
             title: Text(' About '),
-          ),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.fromLTRB(45.0, 200.0, 40.0, 20.0),
-              child: Text (
-                'Logout',
-                style: TextStyle(
-                    fontSize: 20.0,
-                    fontFamily: 'Mulish',
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black
-                ),
-              ),
-            ),
           ),
         ],
       ),
