@@ -3,12 +3,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:saathi/utils/app_color.dart';
 import 'package:saathi/utils/app_image.dart';
 
-class HomePage extends StatefulWidget {
+class Meditation extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _MeditationState createState() => _MeditationState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MeditationState extends State<Meditation> {
   List<String> _feelingTitleList = [
     "Happy",
     "Angry",
@@ -31,19 +31,28 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: SafeArea(
-        child: Scaffold(
-          backgroundColor: Colors.white,
-          body: Container(
-            child: Column(
-              children: [
-                _containerWidget(),
-              ],
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Color(0xff437BAF),
+          title: Text("Meditation Dome"),
+          centerTitle: true,
+        ),
+      body: Container(
+        color: Colors.white,
+        child: SafeArea(
+          child: Scaffold(
+            backgroundColor: Colors.white,
+            body: Container(
+              child: Column(
+                children: [
+                  _containerWidget(),
+                ],
+              ),
             ),
           ),
         ),
+      ),
       ),
     );
   }
