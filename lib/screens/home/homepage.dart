@@ -44,14 +44,14 @@ class _HomePageState extends State<HomePage> {
     "Hope Chamber",
     "Add Post",
     "Meditation Dome",
-    "Profile"
+    "Serenity Bot"
   ];
   final pages = [
     PositivityWall(),
     Quotes(),
     AddPost(),
     Meditation(),
-    UserProfile(),
+    ChatPage(),
   ];
   Map<int, bool> selected = {0: true, 1: false, 2: false, 3: false, 4: false};
   changeBottomtab(int x) {
@@ -295,14 +295,14 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => ChatPage()));
-          },
-          backgroundColor: Color(0xff437BAF),
-          child: const Icon(Icons.chat),
-        ),
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () {
+        //     Navigator.push(
+        //         context, MaterialPageRoute(builder: (context) => ChatPage()));
+        //   },
+        //   backgroundColor: Color(0xff437BAF),
+        //   child: const Icon(Icons.chat),
+        // ),
       ),
     );
   }
