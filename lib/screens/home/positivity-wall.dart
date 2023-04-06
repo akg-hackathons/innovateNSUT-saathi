@@ -500,339 +500,342 @@ class PositivityWall extends StatelessWidget {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color(0xff437BAF),
-          title: Text("Positivity Wall"),
-          centerTitle: true,
-          // leading: IconButton(
-          //   icon: Image.asset(
-          //     "assets/images/profileicon.png",
-          //     height: 26,
-          //   ),
-          //   onPressed: (){
-          //     Navigator.push(context, MaterialPageRoute(builder: (context)=> UserProfile()));
-          //   },
-          // ),
-          actions: [
-            IconButton(
-                iconSize: 28,
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Search()));
-                },
-                icon: Icon(Icons.search)
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xff437BAF),
+        title: Text("Positivity Wall"),
+        centerTitle: true,
+        // leading: IconButton(
+        //   icon: Image.asset(
+        //     "assets/images/profileicon.png",
+        //     height: 26,
+        //   ),
+        //   onPressed: (){
+        //     Navigator.push(context, MaterialPageRoute(builder: (context)=> UserProfile()));
+        //   },
+        // ),
+        actions: [
+          IconButton(
+              iconSize: 28,
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Search()));
+              },
+              icon: Icon(Icons.search)),
+        ],
+      ),
+      drawer: UserProfile(),
+      
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.fromLTRB(20, 10, 20, 20),
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.person_pin,
+                        size: 45.0,
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Column(
+                        children: [
+                          Text(
+                            "John Doe",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(
+                            height: 5.0,
+                          ),
+                          Text("Role"),
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Icon(Icons.done_all_sharp),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "2d",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 4.0,
+                  ),
+                  Ink(
+                    width: 300,
+                    height: 300,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        image: const DecorationImage(
+                            image: NetworkImage(
+                                "https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"),
+                            fit: BoxFit.fill)),
+                    child: InkWell(
+                      onTap: () {},
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Container(
+                      margin: EdgeInsets.only(left: 16.0, right: 16.0),
+                      child: Text(
+                        "Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed luctus lectus vel nunc ultricies a ultricies urna tempus ......",
+                        style: TextStyle(fontWeight: FontWeight.w500),
+                      )),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 10.0,
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.thumb_up_outlined),
+                      ),
+                      Text(
+                        "1000",
+                        style: TextStyle(fontWeight: FontWeight.w500),
+                      ),
+                      const SizedBox(
+                        width: 50,
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.comment_outlined),
+                      ),
+                      Text(
+                        "1000",
+                        style: TextStyle(fontWeight: FontWeight.w500),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.fromLTRB(20, 10, 20, 20),
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.person_pin,
+                        size: 45.0,
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Column(
+                        children: [
+                          Text(
+                            "John Doe",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(
+                            height: 5.0,
+                          ),
+                          Text("Role"),
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Icon(Icons.done_all_sharp),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "2d",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 4.0,
+                  ),
+                  Ink(
+                    width: 300,
+                    height: 300,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        image: const DecorationImage(
+                            image: NetworkImage(
+                                "https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"),
+                            fit: BoxFit.fill)),
+                    child: InkWell(
+                      onTap: () {},
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Container(
+                      margin: EdgeInsets.only(left: 16.0, right: 16.0),
+                      child: Text(
+                        "Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed luctus lectus vel nunc ultricies a ultricies urna tempus ......",
+                        style: TextStyle(fontWeight: FontWeight.w500),
+                      )),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 10.0,
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.thumb_up_outlined),
+                      ),
+                      Text(
+                        "1000",
+                        style: TextStyle(fontWeight: FontWeight.w500),
+                      ),
+                      const SizedBox(
+                        width: 50,
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.comment_outlined),
+                      ),
+                      Text(
+                        "1000",
+                        style: TextStyle(fontWeight: FontWeight.w500),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.fromLTRB(20, 10, 20, 20),
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.person_pin,
+                        size: 45.0,
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Column(
+                        children: [
+                          Text(
+                            "John Doe",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(
+                            height: 5.0,
+                          ),
+                          Text("Role"),
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Icon(Icons.done_all_sharp),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "2d",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 4.0,
+                  ),
+                  Ink(
+                    width: 300,
+                    height: 300,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        image: const DecorationImage(
+                            image: NetworkImage(
+                                "https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"),
+                            fit: BoxFit.fill)),
+                    child: InkWell(
+                      onTap: () {},
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Container(
+                      margin: EdgeInsets.only(left: 16.0, right: 16.0),
+                      child: Text(
+                        "Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed luctus lectus vel nunc ultricies a ultricies urna tempus ......",
+                        style: TextStyle(fontWeight: FontWeight.w500),
+                      )),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Row(
+                    children: [
+                      const SizedBox(
+                        width: 10.0,
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.thumb_up_outlined),
+                      ),
+                      Text(
+                        "1000",
+                        style: TextStyle(fontWeight: FontWeight.w500),
+                      ),
+                      const SizedBox(
+                        width: 50,
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.comment_outlined),
+                      ),
+                      Text(
+                        "1000",
+                        style: TextStyle(fontWeight: FontWeight.w500),
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
-        ),
-
-        drawer: UserProfile(),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatPage()));
-          },
-          backgroundColor: Color(0xff437BAF),
-          child: const Icon(Icons.chat),
-        ),
-        body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            children: [
-              Container(
-                margin: const EdgeInsets.fromLTRB(20, 10, 20, 20),
-                child: Column(
-                  children: [
-                   const SizedBox(
-                      height: 20.0,
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                            Icons.person_pin,
-                          size: 45.0,
-                        ),
-                        const SizedBox(
-                          width: 8.0,
-                        ),
-                        Column(
-                          children: [
-                            Text(
-                                "John Doe",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 5.0,
-                            ),
-                            Text("Role"),
-                          ],
-                        ),
-                      const  SizedBox(
-                          width: 10,
-                        ),
-                        Icon(Icons.done_all_sharp),
-                      const  SizedBox(
-                          width: 10,
-                        ),
-                        Text("2d",style: TextStyle(fontWeight: FontWeight.bold),),
-                        SizedBox(
-                          height: 20.0,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height:4.0,
-                    ),
-                    Ink(
-                      width: 300,
-                      height: 300,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          image: const DecorationImage(
-                              image: NetworkImage(
-                                  "https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"),
-                              fit: BoxFit.fill)),
-                      child: InkWell(onTap: (){},),
-                    ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 16.0 , right: 16.0),
-                        child: Text(
-                            "Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed luctus lectus vel nunc ultricies a ultricies urna tempus ......",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500
-                        ),
-                        )),
-                    SizedBox(
-                      height: 5.0,
-                    ),
-                    Row(
-                      children: [
-                        const SizedBox(
-                          width: 10.0,
-                        ),
-                        IconButton(
-                          onPressed: (){},
-                            icon: const Icon(
-                                Icons.thumb_up_outlined),
-                        ),
-                        Text("1000",style: TextStyle(fontWeight: FontWeight.w500),),
-                      const  SizedBox(
-                          width: 50,
-                        ),
-                        IconButton(
-                          onPressed: (){},
-                          icon: const Icon(
-                              Icons.comment_outlined),
-                        ),
-                        Text("1000",style: TextStyle(fontWeight: FontWeight.w500),)
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.fromLTRB(20, 10, 20, 20),
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 20.0,
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.person_pin,
-                          size: 45.0,
-                        ),
-                        const SizedBox(
-                          width: 8.0,
-                        ),
-                        Column(
-                          children: [
-                            Text(
-                              "John Doe",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 5.0,
-                            ),
-                            Text("Role"),
-                          ],
-                        ),
-                        const  SizedBox(
-                          width: 10,
-                        ),
-                        Icon(Icons.done_all_sharp),
-                        const  SizedBox(
-                          width: 10,
-                        ),
-                        Text("2d",style: TextStyle(fontWeight: FontWeight.bold),),
-                        SizedBox(
-                          height: 20.0,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height:4.0,
-                    ),
-                    Ink(
-                      width: 300,
-                      height: 300,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          image: const DecorationImage(
-                              image: NetworkImage(
-                                  "https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"),
-                              fit: BoxFit.fill)),
-                      child: InkWell(onTap: (){},),
-                    ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    Container(
-                        margin: EdgeInsets.only(left: 16.0 , right: 16.0),
-                        child: Text(
-                          "Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed luctus lectus vel nunc ultricies a ultricies urna tempus ......",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500
-                          ),
-                        )),
-                    SizedBox(
-                      height: 5.0,
-                    ),
-                    Row(
-                      children: [
-                        const SizedBox(
-                          width: 10.0,
-                        ),
-                        IconButton(
-                          onPressed: (){},
-                          icon: const Icon(
-                              Icons.thumb_up_outlined),
-                        ),
-                        Text("1000",style: TextStyle(fontWeight: FontWeight.w500),),
-                        const  SizedBox(
-                          width: 50,
-                        ),
-                        IconButton(
-                          onPressed: (){},
-                          icon: const Icon(
-                              Icons.comment_outlined),
-                        ),
-                        Text("1000",style: TextStyle(fontWeight: FontWeight.w500),)
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.fromLTRB(20, 10, 20, 20),
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 20.0,
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.person_pin,
-                          size: 45.0,
-                        ),
-                        const SizedBox(
-                          width: 8.0,
-                        ),
-                        Column(
-                          children: [
-                            Text(
-                              "John Doe",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 5.0,
-                            ),
-                            Text("Role"),
-                          ],
-                        ),
-                        const  SizedBox(
-                          width: 10,
-                        ),
-                        Icon(Icons.done_all_sharp),
-                        const  SizedBox(
-                          width: 10,
-                        ),
-                        Text("2d",style: TextStyle(fontWeight: FontWeight.bold),),
-                        SizedBox(
-                          height: 20.0,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height:4.0,
-                    ),
-                    Ink(
-                      width: 300,
-                      height: 300,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          image: const DecorationImage(
-                              image: NetworkImage(
-                                  "https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"),
-                              fit: BoxFit.fill)),
-                      child: InkWell(onTap: (){},),
-                    ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    Container(
-                        margin: EdgeInsets.only(left: 16.0 , right: 16.0),
-                        child: Text(
-                          "Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed luctus lectus vel nunc ultricies a ultricies urna tempus ......",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500
-                          ),
-                        )),
-                    SizedBox(
-                      height: 5.0,
-                    ),
-                    Row(
-                      children: [
-                        const SizedBox(
-                          width: 10.0,
-                        ),
-                        IconButton(
-                          onPressed: (){},
-                          icon: const Icon(
-                              Icons.thumb_up_outlined),
-                        ),
-                        Text("1000",style: TextStyle(fontWeight: FontWeight.w500),),
-                        const  SizedBox(
-                          width: 50,
-                        ),
-                        IconButton(
-                          onPressed: (){},
-                          icon: const Icon(
-                              Icons.comment_outlined),
-                        ),
-                        Text("1000",style: TextStyle(fontWeight: FontWeight.w500),)
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
         ),
       ),
     );
   }
 }
-
-
-

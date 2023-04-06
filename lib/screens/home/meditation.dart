@@ -28,16 +28,14 @@ class _MeditationState extends State<Meditation> {
 
   int selectedMenu = 0;
 
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color(0xff437BAF),
-          title: Text("Meditation Dome"),
-          centerTitle: true,
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xff437BAF),
+        title: Text("Meditation Dome"),
+        centerTitle: true,
+      ),
       body: Container(
         color: Colors.white,
         child: SafeArea(
@@ -52,7 +50,6 @@ class _MeditationState extends State<Meditation> {
             ),
           ),
         ),
-      ),
       ),
     );
   }

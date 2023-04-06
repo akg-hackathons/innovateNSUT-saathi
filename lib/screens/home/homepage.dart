@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:saathi/controllers/botController.dart';
 import 'package:saathi/screens/home/AddPost.dart';
 import 'package:saathi/screens/home/hope_screen.dart';
 import 'package:saathi/screens/home/meditation.dart';
 import 'package:saathi/screens/home/positivity-wall.dart';
 import 'package:saathi/screens/home/userprofile.dart';
+import 'package:saathi/screens/widgets/bottom_nav_tab.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,129 +19,105 @@ class _HomePageState extends State<HomePage> {
   int pageIndex = 0;
 
   final pages = [
-     PositivityWall(),
-     Quotes(),
-     AddPost(),
-     Meditation(),
-     UserProfile(),
+    PositivityWall(),
+    Quotes(),
+    AddPost(),
+    Meditation(),
+    UserProfile(),
   ];
+  Map<int, bool> selected = {0: true, 1: false, 2: false, 3: false, 4: false};
+  changeBottomtab(int x) {
+    setState(() {
+      pageIndex = x;
+      for (int i = 0; i < 5; i++) {
+        if (x == i) {
+          selected[i] = true;
+        } else {
+          selected[i] = false;
+        }
+      }
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          body: pages[pageIndex],
-          bottomNavigationBar: buildMyNavBar(context),
-      ),
-    );
-  }
-  buildMyNavBar(BuildContext context){
-    return Container(
-      height: 66,
-      color: Color(0xff437BAF),
-      child:Column(
-        children:[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              IconButton(
-                onPressed: (){
-                  setState(() {
-                    pageIndex=0;
-                  });
-                },
-                icon: pageIndex ==0
-                    ?const Icon(
-                  Icons.home_filled,
-                  color: Colors.white,
-                  size: 30,
-                )
-                    : const Icon(
-                  Icons.home_outlined,
-                  color: Colors.white,
-                  size: 30,
-                ),
+        extendBody: true,
+        body: pages[pageIndex],
+        bottomNavigationBar: Container(
+          padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.05),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Container(
+              height: 60,
+              color: const Color(0xff437BAF),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  BottomNavTab(
+                    val: 0,
+                    icon: "assets/icons/pw_filled.svg",
+                    nicon: "assets/icons/pw_outlined.svg",
+                    selected: selected[0],
+                    callback: changeBottomtab,
+                  ),
+                  BottomNavTab(
+                    val: 1,
+                    icon: "assets/icons/hope_filled.svg",
+                    nicon: "assets/icons/hope_filled.svg",
+                    selected: selected[1],
+                    callback: changeBottomtab,
+                  ),
+                  BottomNavCentreTab(
+                    val: 2,
+                    icon: "assets/icons/add_filled.svg",
+                    nicon: "assets/icons/add_outlined.svg",
+                    selected: selected[2],
+                    callback: changeBottomtab,
+                  ),
+                  BottomNavTab(
+                    val: 3,
+                    icon: "assets/icons/mood_filled.svg",
+                    nicon: "assets/icons/mood_outline.svg",
+                    selected: selected[3],
+                    callback: changeBottomtab,
+                  ),
+                  BottomNavTab(
+                    val: 4,
+                    icon: "assets/icons/profile_filled.svg",
+                    nicon: "assets/icons/profile_filled.svg",
+                    selected: selected[4],
+                    callback: changeBottomtab,
+                  ),
+                ],
               ),
-              IconButton(
-                onPressed: (){
-                  setState(() {
-                    pageIndex=1;
-                  });
-                },
-                icon: pageIndex ==1
-                    ?const Icon(
-                  Icons.favorite_rounded,
-                  color: Colors.white,
-                  size: 30,
-                )
-                    : const Icon(
-                  Icons.favorite_border_outlined,
-                  color: Colors.white,
-                  size: 30,
-                ),
-              ),
-              IconButton(
-                onPressed: (){
-                  setState(() {
-                    pageIndex=2;
-                  });
-                },
-                icon: pageIndex ==2
-                    ?const Icon(
-                  Icons.add_circle,
-                  color: Colors.white,
-                  size: 40,
-                )
-                    : const Icon(
-                  Icons.add_circle_outline,
-                  color: Colors.white,
-                  size: 30,
-                ),
-              ),
-              IconButton(
-                onPressed: (){
-                  setState(() {
-                    pageIndex=3;
-                  });
-                },
-                icon: pageIndex ==3
-                    ? IconButton(
-                    onPressed: (){},
-                     icon: Image.asset(
-                       "assets/images/yoga.svg" ,
-
-                     ),
-                )
-                    : IconButton(
-                  onPressed: (){},
-                    icon:  SvgPicture.asset(
-                        "assets/images/yoga.svg",
-                      color: Colors.white,
-                      height: 100,
-                    ),
-                )
-              ),
-              IconButton(
-                onPressed: (){
-                  setState(() {
-                    pageIndex=4;
-                  });
-                },
-                icon: pageIndex ==4
-                    ?const Icon(
-                  Icons.account_circle_rounded,
-                  color: Colors.white,
-                  size: 30,
-                )
-                    : const Icon(
-                  Icons.account_circle_outlined,
-                  color: Colors.white,
-                  size: 30,
-                ),
-              ),
-            ],
+            ),
           ),
-        ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => ChatPage()));
+          },
+          backgroundColor: Color(0xff437BAF),
+          child: const Icon(Icons.chat),
+        ),
       ),
     );
   }
+
+  // buildMyNavBar(BuildContext context) {
+  //   return Container();
+  // }
 }
