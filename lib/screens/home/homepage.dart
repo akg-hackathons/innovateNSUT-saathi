@@ -285,8 +285,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                   BottomNavTab(
                     val: 4,
-                    icon: "assets/icons/profile_filled.svg",
-                    nicon: "assets/icons/profile_outlined.svg",
+                    icon: "assets/icons/material-symbol_chat.svg",
+                    nicon: "assets/icons/material-symbol_chat.svg",
                     selected: selected[4],
                     callback: changeBottomtab,
                   ),
