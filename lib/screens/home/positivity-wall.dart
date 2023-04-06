@@ -485,51 +485,31 @@
 //
 
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:saathi/controllers/botController.dart';
-import 'package:saathi/screens/home/app-bar.dart';
-import 'package:saathi/screens/home/search.dart';
-import 'package:saathi/screens/home/userprofile.dart';
-import 'package:saathi/utils.dart';
 
-class PositivityWall extends StatelessWidget {
+class PositivityWall extends StatefulWidget {
+  const PositivityWall({super.key});
+
+  @override
+  State<PositivityWall> createState() => _PositivityWallState();
+}
+
+class _PositivityWallState extends State<PositivityWall> {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xff437BAF),
-        title: Text("Positivity Wall"),
-        centerTitle: true,
-        // leading: IconButton(
-        //   icon: Image.asset(
-        //     "assets/images/profileicon.png",
-        //     height: 26,
-        //   ),
-        //   onPressed: (){
-        //     Navigator.push(context, MaterialPageRoute(builder: (context)=> UserProfile()));
-        //   },
-        // ),
-        actions: [
-          IconButton(
-              iconSize: 28,
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Search()));
-              },
-              icon: Icon(Icons.search)),
-        ],
-      ),
-      drawer: UserProfile(),
+      
       
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
+            SizedBox(
+              height: 60,
+            ),
             Container(
               margin: const EdgeInsets.fromLTRB(20, 10, 20, 20),
               child: Column(

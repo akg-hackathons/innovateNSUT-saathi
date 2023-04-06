@@ -29,15 +29,19 @@ class BottomNavTab extends StatelessWidget {
       onPressed: () {
         callback(val);
       },
-      child: selected!
-          ? SvgPicture.asset(
-              icon,
-              color: Colors.white,
-            )
-          : SvgPicture.asset(
-              nicon,
-              color: Colors.white,
-            ),
+      child: Container(
+        height: 24,
+        child: selected!
+            ? SvgPicture.asset(
+                icon,
+                
+                color: Colors.white,
+              )
+            : SvgPicture.asset(
+                nicon,
+                color: Colors.white,
+              ),
+      ),
     );
   }
 }

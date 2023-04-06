@@ -4,6 +4,8 @@ import 'package:saathi/utils/app_color.dart';
 import 'package:saathi/utils/app_image.dart';
 
 class Meditation extends StatefulWidget {
+  const Meditation({super.key});
+
   @override
   _MeditationState createState() => _MeditationState();
 }
@@ -30,26 +32,11 @@ class _MeditationState extends State<Meditation> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xff437BAF),
-        title: Text("Meditation Dome"),
-        centerTitle: true,
-      ),
-      body: Container(
-        color: Colors.white,
-        child: SafeArea(
-          child: Scaffold(
-            backgroundColor: Colors.white,
-            body: Container(
-              child: Column(
-                children: [
-                  _containerWidget(),
-                ],
-              ),
-            ),
-          ),
-        ),
+    return Container(
+      child: Column(
+        children: [
+          _containerWidget(),
+        ],
       ),
     );
   }
@@ -187,7 +174,7 @@ class _MeditationState extends State<Meditation> {
       required String description,
       required String bgImage}) {
     return Container(
-      margin: EdgeInsets.only(left: 20),
+      margin: const EdgeInsets.symmetric(horizontal: 12),
       child: Stack(
         children: [
           Image.asset(bgImage),
