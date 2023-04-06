@@ -56,7 +56,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Container(
                 width: double.infinity,
                 height: 200,
-                child: Lottie.asset('assets/signup.json')),
+                child: Lottie.asset('assets/images/signup.json')),
             Center(
               child: Text(
                 "Become a member!",
@@ -172,7 +172,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(
-                          'assets/google.png',
+                          'assets/images/google.png',
                           width: 18,
                         ),
                         SizedBox(

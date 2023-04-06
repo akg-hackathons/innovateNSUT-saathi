@@ -19,7 +19,7 @@ class Verify extends StatelessWidget {
               const SizedBox(
                 height: 70,
               ),
-              Image.asset('assets/verify_image2.png'),
+              Image.asset('assets/images/verify_image2.png'),
               const SizedBox(
                 height: 35,
               ),

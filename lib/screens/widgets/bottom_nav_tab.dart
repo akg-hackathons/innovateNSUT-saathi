@@ -30,7 +30,7 @@ class BottomNavTab extends StatelessWidget {
         callback(val);
       },
       child: Container(
-        height: 24,
+        height: 20,
         child: selected!
             ? SvgPicture.asset(
                 icon,
@@ -52,6 +52,7 @@ class BottomNavCentreTab extends StatelessWidget {
     required this.val,
     required this.icon,
     required this.nicon,
+    required this.contextx,
     required this.selected,
     required this.callback,
   });
@@ -60,6 +61,7 @@ class BottomNavCentreTab extends StatelessWidget {
   final dynamic callback;
   final String nicon;
   final bool? selected;
+  final BuildContext contextx;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -72,7 +74,7 @@ class BottomNavCentreTab extends StatelessWidget {
         // padding: const EdgeInsets.all(10),
       ),
       onPressed: () {
-        callback(val);
+        callback(contextx);
       },
       child: CircleAvatar(
         backgroundColor: Color(0xff204567),

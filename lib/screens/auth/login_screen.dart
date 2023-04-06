@@ -33,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Container(
                 width: double.infinity,
                 height: 200,
-                child: Lottie.asset('assets/login.json')),
+                child: Lottie.asset('assets/images/login.json')),
             Center(
               child: Text(
                 "Welcome Back!",
@@ -159,7 +159,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(
-                          'assets/google.png',
+                          'assets/images/google.png',
                           width: 18,
                         ),
                         SizedBox(

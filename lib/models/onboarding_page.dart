@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saathi/screens/auth/login_screen.dart';
 import 'package:saathi/screens/home/homepage.dart';
 import 'package:saathi/screens/home/meditation.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -147,7 +148,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             } else {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => HomePage()),
+                MaterialPageRoute(builder: (context) => LoginScreen()),
               );
             }
           },
